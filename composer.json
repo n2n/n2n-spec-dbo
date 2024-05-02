@@ -1,0 +1,33 @@
+{
+	"name" : "n2n/n2n-spec-pdod",
+	"type" : "library",
+	"description" : "Combines different components of n2n framework.",
+	"keywords" : [
+		"n2n",
+		"framework"
+	],
+	"homepage" : "https://www.n2n.ch",
+	"license" : "LGPL-3.0-or-later",
+	"authors" : [
+        {
+			"name" : "Andreas von Burg",
+			"email" : "a@von-burg.net",
+			"homepage" : "https://andreas.von-burg.net"
+		}
+	],
+	"minimum-stability" : "dev",
+	"prefer-stable" : true,
+	"config" : {
+		"vendor-dir" : "src/vendor"
+	},
+	"require" : {
+    },
+    "require-dev": {
+        "n2n/n2n-util": "^7.4"
+    },
+	"autoload" : {
+		"psr-4" : {
+			"n2n\\spec\\dbo\\" : "src/app/n2n/spec/dbo"
+		}
+	}
+}
