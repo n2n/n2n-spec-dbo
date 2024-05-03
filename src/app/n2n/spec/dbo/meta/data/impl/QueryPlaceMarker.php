@@ -40,7 +40,7 @@ class QueryPlaceMarker implements QueryItem {
 	/* (non-PHPdoc)
 	 * @see \n2n\spec\dbo\meta\data\QueryPart::equals()
 	 */
-	public function equals($obj) {
+	public function equals($obj): bool {
 		return $obj instanceof QueryPlaceMarker && $this->name === $obj->getName();
 	}
 
