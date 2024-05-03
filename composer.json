@@ -21,6 +21,7 @@
 		"vendor-dir" : "src/vendor"
 	},
 	"require" : {
+        "php": ">=8.1"
     },
     "require-dev": {
         "n2n/n2n-util": "^7.4"
