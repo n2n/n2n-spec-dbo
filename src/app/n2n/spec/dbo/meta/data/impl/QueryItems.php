@@ -38,7 +38,7 @@ class QueryItems {
 	}
 
 	static function placeMarker(string $name = null): QueryPlaceMarker {
-		return new QueryPlaceMarker($name = null);
+		return new QueryPlaceMarker($name);
 	}
 
 	static function function(string $name, QueryItem $parameterQueryItem = null): QueryFunction {

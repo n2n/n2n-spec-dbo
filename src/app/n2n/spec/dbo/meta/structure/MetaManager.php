@@ -28,10 +28,10 @@ interface MetaManager {
 	public function flush();
 	/**
 	 * 
-	 * @param array $metaEnties an array of MetaEntities or MetaEntity names.
+	 * @param array $metaEntities an array of MetaEntities or MetaEntity names.
 	 * @return Backuper
 	 */
-	public function createBackuper(array $metaEnties): Backuper;
+	public function createBackuper(array $metaEntities): Backuper;
 
 	public function createDatabase(): Database;
 }
