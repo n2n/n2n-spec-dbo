@@ -22,7 +22,8 @@
 namespace n2n\spec\dbo\meta\data;
 
 interface QueryPart {
+
 	public function buildItem(QueryFragmentBuilder $fragmentBuilder);
 
-	public function equals($obj);
+	public function equals(mixed $obj): bool;
 }
