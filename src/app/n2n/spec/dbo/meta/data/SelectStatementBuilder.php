@@ -36,7 +36,7 @@ interface SelectStatementBuilder {
 
 	public function addGroup(QueryItem $queryItem): static;
 
-	public function addOrderBy(QueryItem $queryItem, string $direction);
+	public function addOrderBy(QueryItem $queryItem, string $direction): static;
 
 	public function getHavingComparator(): ComparisonBuilder;
 
