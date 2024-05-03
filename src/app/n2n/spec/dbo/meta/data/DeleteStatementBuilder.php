@@ -22,7 +22,7 @@
 namespace n2n\spec\dbo\meta\data;
 
 interface DeleteStatementBuilder {
-	public function setTable(string $tableName): void;
+	public function setTable(string $tableName): static;
 
 	public function getWhereComparator(): ComparisonBuilder;
 
