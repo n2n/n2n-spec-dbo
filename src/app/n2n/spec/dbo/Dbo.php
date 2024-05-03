@@ -70,9 +70,8 @@ interface Dbo {
 
 	/**
 	 * @throws DboException
-	 * @see \PDO::quote()
 	 */
-	function quote(string|int|float|bool|null $value): void;
+	function quote(string|int|float|bool|null $value): string|null;
 
 	function createMetaManager(): MetaManager;
 
