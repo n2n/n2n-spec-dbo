@@ -19,10 +19,26 @@
  * Bert Hofmänner.......: Idea, Frontend UI, Community Leader, Marketing
  * Thomas Günther.......: Developer, Hangar
  */
-namespace n2n\spec\dbo\meta\data;
+namespace n2n\spec\dbo\meta\data\impl;
 
-interface QueryPart {
-	public function buildItem(QueryFragmentBuilder $fragmentBuilder);
+use n2n\spec\dbo\meta\data\QueryFragmentBuilder;
+use n2n\spec\dbo\meta\data\QueryItem;
 
-	public function equals($obj);
+class QueryConstant implements QueryItem {
+
+	public function __construct(protected string|int|float|null $value) {
+
+	}
+	
+	public function getValue(): float|int|string|null {
+		return $this->value;
+	}
+	
+	public function buildItem(QueryFragmentBuilder $fragmentBuilder): void {
+		$fragmentBuilder->addConstant($this->getValue());
+	}
+	
+	public function equals(mixed $obj): bool {
+		return $obj instanceof QueryConstant && $this->value === $obj->value;
+	}
 }

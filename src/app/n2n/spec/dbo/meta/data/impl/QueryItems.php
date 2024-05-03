@@ -19,10 +19,24 @@
  * Bert Hofmänner.......: Idea, Frontend UI, Community Leader, Marketing
  * Thomas Günther.......: Developer, Hangar
  */
-namespace n2n\spec\dbo\meta\data;
+namespace n2n\spec\dbo\meta\data\impl;
 
-interface QueryPart {
-	public function buildItem(QueryFragmentBuilder $fragmentBuilder);
+class QueryItems {
 
-	public function equals($obj);
+	static function column(string $columnName, string $tableAlias = null): QueryColumn {
+		return new QueryColumn($columnName, $tableAlias);
+	}
+
+	static function constant(mixed $value): QueryConstant {
+		return new QueryConstant($value);
+	}
+
+	static function table(string $tableName): QueryTable {
+		return new QueryTable($tableName);
+	}
+
+	static function placeMarker(string $name = null): QueryPlaceMarker {
+		return new QueryPlaceMarker($name = null);
+	}
+
 }

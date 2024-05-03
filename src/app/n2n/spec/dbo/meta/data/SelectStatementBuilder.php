@@ -22,27 +22,27 @@
 namespace n2n\spec\dbo\meta\data;
 
 interface SelectStatementBuilder {
-	public function addSelectColumn(QueryItem $item, string $asName = null): void;
+	public function addSelectColumn(QueryItem $item, string $asName = null): static;
 	/**
 	 * @param bool $distinct
 	 */
-	public function setDistinct(bool $distinct): void;
+	public function setDistinct(bool $distinct): static;
 
-	public function addFrom(QueryResult $queryResult, $alias = null): void;
+	public function addFrom(QueryResult $queryResult, $alias = null): static;
 
 	public function addJoin($joinType, QueryResult $queryResult, $alias = null, ComparisonBuilder $onComparator = null): ComparisonBuilder;
 
 	public function getWhereComparator(): ComparisonBuilder;
 
-	public function addGroup(QueryItem $queryItem): void;
+	public function addGroup(QueryItem $queryItem): static;
 
 	public function addOrderBy(QueryItem $queryItem, string $direction);
 
 	public function getHavingComparator(): ComparisonBuilder;
 
-	public function setLimit(int $limit, int $num = null): void;
+	public function setLimit(int $limit, int $num = null): static;
 
-	function setLockMode(?LockMode $lockMode): void;
+	function setLockMode(?LockMode $lockMode): static;
 
 	public function toSqlString(): string;
 

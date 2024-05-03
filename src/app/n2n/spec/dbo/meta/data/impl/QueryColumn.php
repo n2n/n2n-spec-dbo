@@ -19,10 +19,30 @@
  * Bert Hofmänner.......: Idea, Frontend UI, Community Leader, Marketing
  * Thomas Günther.......: Developer, Hangar
  */
-namespace n2n\spec\dbo\meta\data;
+namespace n2n\spec\dbo\meta\data\impl;
 
-interface QueryPart {
-	public function buildItem(QueryFragmentBuilder $fragmentBuilder);
+use n2n\spec\dbo\meta\data\QueryItem;
+use n2n\spec\dbo\meta\data\QueryFragmentBuilder;
 
-	public function equals($obj);
+class QueryColumn implements QueryItem {
+	
+	public function __construct(private readonly string $columnName, private readonly ?string $tableAlias = null) {
+	}
+	
+	public function getTableAlias(): ?string {
+		return $this->tableAlias;
+	}
+	
+	public function getColumnName(): string {
+		return $this->columnName;
+	}
+	
+	public function buildItem(QueryFragmentBuilder $fragmentBuilder): void {
+		$fragmentBuilder->addField($this->getColumnName(), $this->getTableAlias());
+	}
+	
+	public function equals(mixed $obj): bool {
+		return $obj instanceof QueryColumn && $this->tableAlias === $obj->getTableAlias()
+				&& $this->columnName === $obj->getColumnName();
+	}
 }

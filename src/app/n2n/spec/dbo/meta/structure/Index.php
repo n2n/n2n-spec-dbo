@@ -43,8 +43,9 @@ interface Index {
 	 * @return Column[]
 	 */
 	public function getColumns(): array;
-	
+
 	/**
+	 * @param string $name
 	 * @return Column
 	 * @throws DboException
 	 */
@@ -60,16 +61,14 @@ interface Index {
 	 *  @return Column[]
 	 */
 	public function getRefColumns(): array;
-	
+
 	/**
+	 * @param string $name
 	 * @return Column
 	 * @throws DboException
 	 */
 	public function getRefColumnByName(string $name): Column;
 	
-	/**
-	 * @return bool
-	 */
 	public function containsRefColumnName(string $name): bool;
 	
 	/**
@@ -78,10 +77,7 @@ interface Index {
 	 */
 	public function getRefTable(): ?Table;
 	
-	/**
-	 * @return string []
-	 */
-	public function getAttrs();
+	public function getAttrs(): array;
 	
 	/**
 	 * @param Index $index

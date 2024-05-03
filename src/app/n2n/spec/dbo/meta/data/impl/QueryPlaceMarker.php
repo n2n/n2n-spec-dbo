@@ -19,10 +19,29 @@
  * Bert Hofmänner.......: Idea, Frontend UI, Community Leader, Marketing
  * Thomas Günther.......: Developer, Hangar
  */
-namespace n2n\spec\dbo\meta\data;
+namespace n2n\spec\dbo\meta\data\impl;
 
-interface QueryPart {
-	public function buildItem(QueryFragmentBuilder $fragmentBuilder);
+use n2n\spec\dbo\meta\data\QueryItem;
+use n2n\spec\dbo\meta\data\QueryFragmentBuilder;
 
-	public function equals($obj);
+class QueryPlaceMarker implements QueryItem {
+
+	
+	public function __construct(private readonly ?string $name = null) {
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+	
+	public function buildItem(QueryFragmentBuilder $fragmentBuilder): void {
+		$fragmentBuilder->addPlaceMarker($this->getName());
+	}
+	/* (non-PHPdoc)
+	 * @see \n2n\spec\dbo\meta\data\QueryPart::equals()
+	 */
+	public function equals($obj) {
+		return $obj instanceof QueryPlaceMarker && $this->name === $obj->getName();
+	}
+
 }
