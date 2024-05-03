@@ -42,7 +42,7 @@ interface SelectStatementBuilder {
 
 	public function setLimit(int $limit, int $num = null): static;
 
-	function setLockMode(?LockMode $lockMode): static;
+	function setLockMode(?QueryLockMode $lockMode): static;
 
 	public function toSqlString(): string;
 
