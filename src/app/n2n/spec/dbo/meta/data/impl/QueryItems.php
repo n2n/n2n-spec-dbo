@@ -21,6 +21,8 @@
  */
 namespace n2n\spec\dbo\meta\data\impl;
 
+use n2n\spec\dbo\meta\data\QueryItem;
+
 class QueryItems {
 
 	static function column(string $columnName, string $tableAlias = null): QueryColumn {
@@ -37,6 +39,10 @@ class QueryItems {
 
 	static function placeMarker(string $name = null): QueryPlaceMarker {
 		return new QueryPlaceMarker($name = null);
+	}
+
+	static function function(string $name, QueryItem $parameterQueryItem = null): QueryFunction {
+		return new QueryFunction($name, $parameterQueryItem);
 	}
 
 }

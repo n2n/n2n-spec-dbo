@@ -22,7 +22,7 @@
 namespace n2n\spec\dbo\meta\data;
 
 interface SelectStatementBuilder {
-	public function addSelectColumn(QueryItem $item, string $asName = null): static;
+	public function addSelectColumn(QueryItem $queryItem, string $asName = null): static;
 	/**
 	 * @param bool $distinct
 	 */
