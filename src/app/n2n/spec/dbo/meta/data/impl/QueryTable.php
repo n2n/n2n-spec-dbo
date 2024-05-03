@@ -39,7 +39,7 @@ class QueryTable implements QueryResult {
 		$fragmentBuilder->addTable($this->name);
 	}
 	
-	public function equals($obj) {
+	public function equals($obj): bool {
 		return $obj instanceof QueryTable && $this->name = $obj->getName();
 	}
 }
