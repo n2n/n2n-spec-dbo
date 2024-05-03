@@ -29,7 +29,7 @@ interface DboStatement {
 	/**
 	 * @return mixed returns null if no more rows can be fetched.
 	 */
-	function fetchNext(): mixed;
+	function fetch(): mixed;
 
 	function fetchAll(): array;
 }
