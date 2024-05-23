@@ -24,6 +24,8 @@ namespace n2n\spec\dbo\meta\data;
 interface InsertStatementBuilder extends PersistStatementBuilder {
 
 	/**
+	 * If upsertUniqueColumns is not null the insert statement is converted to an "upsert"-statement.
+	 *
 	 * Columns are not necessary if you use MariaDb/MySQL only because "REPLACE INTO"-Statements do not require
 	 * to specify these columns, so you could pass an empty are instead.
 	 *
