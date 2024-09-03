@@ -74,6 +74,11 @@ interface ColumnFactory {
 	 * @return BinaryColumn
 	 */
 	public function createBinaryColumn(string $name, int $size): BinaryColumn;
+
+	/**
+	 * Creates a new BlobColumn and applies it to the current table.
+	 */
+	public function createBlobColumn(string $name, int $size): BlobColumn;
 	
 	/**
 	 * Creates a new DataTimeColumn and applies it to the current table.
