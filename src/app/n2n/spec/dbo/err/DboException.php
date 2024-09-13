@@ -23,4 +23,6 @@ namespace n2n\spec\dbo\err;
 
 interface DboException {
 
+	function isDeadlock(): bool;
+
 }
