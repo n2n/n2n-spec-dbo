@@ -50,6 +50,8 @@ interface Dbo {
 	 */
 	function exec(string $statement): false|int;
 
+	function inTransaction(): bool;
+
 	/**
 	 * @throws DboException
 	 * @see \PDO::beginTransaction()
