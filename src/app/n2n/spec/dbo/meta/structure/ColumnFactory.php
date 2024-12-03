@@ -56,7 +56,7 @@ interface ColumnFactory {
 	 * @param string|null $charset
 	 * @return StringColumn
 	 */
-	public function createStringColumn(string $name, int $length, string $charset = null): StringColumn;
+	public function createStringColumn(string $name, int $length, ?string $charset = null): StringColumn;
 	
 	/**
 	 * Creates a new TextColumn and applies it to the current table.
@@ -65,7 +65,7 @@ interface ColumnFactory {
 	 * @param string $charset
 	 * @return TextColumn
 	 */
-	public function createTextColumn(string $name, int $size, string $charset = null): TextColumn;
+	public function createTextColumn(string $name, int $size, ?string $charset = null): TextColumn;
 	
 	/**
 	 * Creates a new BinaryColumn and applies it to the current table.

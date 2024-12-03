@@ -113,7 +113,7 @@ interface Table extends MetaEntity {
 	 * @param string $newTableName Name of created table.
 	 * @return Table
 	 */
-	public function copy(string $newTableName = null): Table;
+	public function copy(?string $newTableName = null): Table;
 	
 	/**
 	 * @return ColumnFactory

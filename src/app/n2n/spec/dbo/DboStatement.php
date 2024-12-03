@@ -24,7 +24,7 @@ namespace n2n\spec\dbo;
 interface DboStatement {
 
 
-	function execute(array $params = null): bool;
+	function execute(?array $params = null): bool;
 
 	/**
 	 * @return mixed returns null if no more rows can be fetched.

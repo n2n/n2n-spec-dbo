@@ -48,7 +48,7 @@ class QueryFunction implements QueryItem {
 	protected $name;
 	protected $parameterQueryItem;
 	
-	public function __construct($name, QueryItem $parameterQueryItem = null) {
+	public function __construct($name, ?QueryItem $parameterQueryItem = null) {
 // TODO: convert to enum
 //		ArgUtils::valEnum($name, self::getNames());
 		$this->name = $name;

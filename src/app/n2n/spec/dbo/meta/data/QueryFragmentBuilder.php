@@ -23,10 +23,10 @@ namespace n2n\spec\dbo\meta\data;
 
 interface QueryFragmentBuilder {
 	public function addTable(string $tableName): void;
-	public function addField(string $fieldName, string $fieldAlias = null): void;
+	public function addField(string $fieldName, ?string $fieldAlias = null): void;
 	public function addFieldAlias($fieldAlias): void;
 	public function addConstant(?string $value): void;
-	public function addPlaceMarker(string $name = null): void;
+	public function addPlaceMarker(?string $name = null): void;
 	public function addOperator(string $operator): void;
 	public function openGroup(): void;
 	public function closeGroup(): void;

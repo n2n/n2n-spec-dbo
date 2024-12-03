@@ -56,11 +56,11 @@ interface ComparisonBuilder {
 	
 	function orTest($operator, QueryResult $queryResult): static;
 	
-	function group(ComparisonBuilder $queryComparator = null, bool $useAnd = true): ComparisonBuilder;
+	function group(?ComparisonBuilder $queryComparator = null, bool $useAnd = true): ComparisonBuilder;
 	
-	function andGroup(ComparisonBuilder $queryComparator = null): ComparisonBuilder;
+	function andGroup(?ComparisonBuilder $queryComparator = null): ComparisonBuilder;
 	
-	function orGroup(ComparisonBuilder $queryComparator = null): ComparisonBuilder;
+	function orGroup(?ComparisonBuilder $queryComparator = null): ComparisonBuilder;
 
 	function endGroup(): ?ComparisonBuilder;
 }

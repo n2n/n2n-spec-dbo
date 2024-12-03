@@ -31,7 +31,7 @@ interface DateTimeColumn extends Column {
 	 * @param \DateTime $dateTime
 	 * @return string
 	 */
-	public function buildRawValue(\DateTime $dateTime = null);
+	public function buildRawValue(?\DateTime $dateTime = null);
 	/**
 	 * @return bool
 	 */

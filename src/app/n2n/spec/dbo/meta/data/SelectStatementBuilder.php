@@ -22,7 +22,7 @@
 namespace n2n\spec\dbo\meta\data;
 
 interface SelectStatementBuilder {
-	public function addSelectColumn(QueryItem $queryItem, string $asName = null): static;
+	public function addSelectColumn(QueryItem $queryItem, ?string $asName = null): static;
 	/**
 	 * @param bool $distinct
 	 */
@@ -30,7 +30,7 @@ interface SelectStatementBuilder {
 
 	public function addFrom(QueryResult $queryResult, $alias = null): static;
 
-	public function addJoin($joinType, QueryResult $queryResult, $alias = null, ComparisonBuilder $onComparator = null): ComparisonBuilder;
+	public function addJoin($joinType, QueryResult $queryResult, $alias = null, ?ComparisonBuilder $onComparator = null): ComparisonBuilder;
 
 	public function getWhereComparator(): ComparisonBuilder;
 
@@ -40,7 +40,7 @@ interface SelectStatementBuilder {
 
 	public function getHavingComparator(): ComparisonBuilder;
 
-	public function setLimit(int $limit, int $num = null): static;
+	public function setLimit(int $limit, ?int $num = null): static;
 
 	function setLockMode(?QueryLockMode $lockMode): static;
 

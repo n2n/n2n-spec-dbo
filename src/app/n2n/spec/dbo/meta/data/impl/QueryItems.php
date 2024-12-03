@@ -25,7 +25,7 @@ use n2n\spec\dbo\meta\data\QueryItem;
 
 class QueryItems {
 
-	static function column(string $columnName, string $tableAlias = null): QueryColumn {
+	static function column(string $columnName, ?string $tableAlias = null): QueryColumn {
 		return new QueryColumn($columnName, $tableAlias);
 	}
 
@@ -37,11 +37,11 @@ class QueryItems {
 		return new QueryTable($tableName);
 	}
 
-	static function placeMarker(string $name = null): QueryPlaceMarker {
+	static function placeMarker(?string $name = null): QueryPlaceMarker {
 		return new QueryPlaceMarker($name);
 	}
 
-	static function function(string $name, QueryItem $parameterQueryItem = null): QueryFunction {
+	static function function(string $name, ?QueryItem $parameterQueryItem = null): QueryFunction {
 		return new QueryFunction($name, $parameterQueryItem);
 	}
 
