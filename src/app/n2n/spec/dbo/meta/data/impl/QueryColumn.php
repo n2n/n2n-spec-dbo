@@ -45,4 +45,8 @@ class QueryColumn implements QueryItem {
 		return $obj instanceof QueryColumn && $this->tableAlias === $obj->getTableAlias()
 				&& $this->columnName === $obj->getColumnName();
 	}
+
+	function __toString(): string {
+		return $this->tableAlias . '.' . $this->columnName;
+	}
 }

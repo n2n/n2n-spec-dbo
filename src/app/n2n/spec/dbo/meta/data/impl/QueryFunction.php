@@ -83,4 +83,8 @@ class QueryFunction implements QueryItem {
 						($this->parameterQueryItem !== null 
 								&& $this->parameterQueryItem->equals($obj->parameterQueryItem)));
 	}
+
+	function __toString(): void {
+		return $this->name;
+	}
 }

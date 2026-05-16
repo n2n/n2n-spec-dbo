@@ -25,15 +25,11 @@ use n2n\spec\dbo\meta\data\QueryItem;
 use n2n\spec\dbo\meta\data\QueryFragmentBuilder;
 
 class QueryPlaceMarker implements QueryItem {
-
-	
 	public function __construct(private readonly ?string $name = null) {
 	}
-
 	public function getName() {
 		return $this->name;
 	}
-	
 	public function buildItem(QueryFragmentBuilder $fragmentBuilder): void {
 		$fragmentBuilder->addPlaceMarker($this->getName());
 	}
@@ -44,4 +40,7 @@ class QueryPlaceMarker implements QueryItem {
 		return $obj instanceof QueryPlaceMarker && $this->name === $obj->getName();
 	}
 
+	function __toString(): string {
+		return $this->name ?? '<placeholer>';
+	}
 }

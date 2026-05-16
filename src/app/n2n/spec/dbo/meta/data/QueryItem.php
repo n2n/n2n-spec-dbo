@@ -22,5 +22,6 @@
 namespace n2n\spec\dbo\meta\data;
 
 
-interface QueryItem extends QueryPart {
+interface QueryItem extends QueryPart, \Stringable {
+
 }

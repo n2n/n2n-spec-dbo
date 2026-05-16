@@ -23,6 +23,7 @@ namespace n2n\spec\dbo\meta\data\impl;
 
 use n2n\spec\dbo\meta\data\QueryFragmentBuilder;
 use n2n\spec\dbo\meta\data\QueryItem;
+use n2n\util\StringUtils;
 
 class QueryConstant implements QueryItem {
 
@@ -40,5 +41,9 @@ class QueryConstant implements QueryItem {
 	
 	public function equals(mixed $obj): bool {
 		return $obj instanceof QueryConstant && $this->value === $obj->value;
+	}
+
+	function __toString(): string {
+		return StringUtils::strOf($this->value, true);
 	}
 }

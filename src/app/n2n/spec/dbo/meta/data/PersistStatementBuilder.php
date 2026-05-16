@@ -22,8 +22,7 @@
 namespace n2n\spec\dbo\meta\data;
 
 
-interface PersistStatementBuilder {
+interface PersistStatementBuilder extends StatementBuilder {
 	public function setTable(string $tableName): static;
 	public function addColumn(QueryItem $column, QueryItem $value): static;
-	public function toSqlString();
 }

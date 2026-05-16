@@ -21,7 +21,7 @@
  */
 namespace n2n\spec\dbo\meta\data;
 
-interface SelectStatementBuilder {
+interface SelectStatementBuilder extends StatementBuilder {
 	public function addSelectColumn(QueryItem $queryItem, ?string $asName = null): static;
 	/**
 	 * @param bool $distinct
@@ -43,8 +43,6 @@ interface SelectStatementBuilder {
 	public function setLimit(int $limit, ?int $num = null): static;
 
 	function setLockMode(?QueryLockMode $lockMode): static;
-
-	public function toSqlString(): string;
 
 	public function toQueryResult(): QueryResult;
 
