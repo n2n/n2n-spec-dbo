@@ -21,10 +21,8 @@
  */
 namespace n2n\spec\dbo\meta\data;
 
-interface DeleteStatementBuilder {
+interface DeleteStatementBuilder extends StatementBuilder {
 	public function setTable(string $tableName): static;
-
-	public function getWhereComparator(): ComparisonBuilder;
 
 	public function toSqlString(): string;
 }

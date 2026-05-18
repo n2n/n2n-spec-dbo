@@ -28,12 +28,6 @@ interface SelectStatementBuilder extends StatementBuilder {
 	 */
 	public function setDistinct(bool $distinct): static;
 
-	public function addFrom(QueryResult $queryResult, $alias = null): static;
-
-	public function addJoin($joinType, QueryResult $queryResult, $alias = null, ?ComparisonBuilder $onComparator = null): ComparisonBuilder;
-
-	public function getWhereComparator(): ComparisonBuilder;
-
 	public function addGroup(QueryItem $queryItem): static;
 
 	public function addOrderBy(QueryItem $queryItem, string $direction): static;
