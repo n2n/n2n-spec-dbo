@@ -19,11 +19,11 @@
  * Bert Hofmänner.......: Idea, Frontend UI, Community Leader, Marketing
  * Thomas Günther.......: Developer, Hangar
  */
-namespace n2n\spec\dbo;
-
-enum TransactionIsolationLevel: string {
-	case TIL_READ_UNCOMMITTED = "READ UNCOMMITTED";
-	case TIL_READ_COMMITTED = "READ COMMITTED";
-	case TIL_REPEATABLE_READ = "REPEATABLE READ";
-	case TIL_SERIALIZABLE = "SERIALIZABLE";
-}
+//namespace n2n\spec\dbo;
+//
+//enum TransactionIsolationLevel: string {
+//	case TIL_READ_UNCOMMITTED = "READ UNCOMMITTED";
+//	case TIL_READ_COMMITTED = "READ COMMITTED";
+//	case TIL_REPEATABLE_READ = "REPEATABLE READ";
+//	case TIL_SERIALIZABLE = "SERIALIZABLE";
+//}
